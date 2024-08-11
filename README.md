@@ -11,4 +11,4 @@ Comme son nom le laisse deviner, la programmation fonctionnelle fait la part bel
 
 <!-- TODO revoir/étoffer cette introduction -->
 
-Le parcours emprunté par ce module est disponible [ici]("https://roadmap.sh/r/embed?id=66b88565b64402e0526d8ebc")
+Le parcours emprunté par ce module est disponible [ici](https://roadmap.sh/r/embed?id=66b88565b64402e0526d8ebc)
