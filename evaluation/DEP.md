@@ -9,7 +9,7 @@ Une absence lors du test pratique doit impérativement être justifiée par un d
 
 Une absence lors d'un check théorique peut être rattrappée à votre retour en classe. Cela ne se fait que sur demande écrite (email). Le rattrappage peut prendre une forme différente, comme par exemple un entretien en tête-à-tête.
 
-Si une remédiation devait s'avérer nécessaire et possible:
+Si une remédiation devait s'avérer nécessaire et justifiée:
 - Elle se fait un samedi matin
 - Elle consiste à répondre à une sélection de quelques questions parmi l'ensemble des "checks théoriques"
 - Elle ne peut compenser qu'un maximum de 20% de la note (donc 1 point)
