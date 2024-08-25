@@ -97,7 +97,7 @@ Cet avertissement a pour but d’éviter une polarisation de type *il faut toujo
 
 ## Fonctionnel
 
-C’est ce qui es fait en 3ème année à l’ETML ;-)
+C’est ce qui est fait en 3ème année à l’ETML ;-)
 
 Comme son nom l’indique, le paradgime fonctionnel fait la grande part aux fonctions.
 
