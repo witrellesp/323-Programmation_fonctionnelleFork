@@ -48,5 +48,5 @@ S'il vous reste du temps, explorez les diverses possibilités offerte par LinQ. 
 ### Débrief
 
 - Avec Git, comparez votre code avant et après la refactorisation.
-- Dette technique : définition et manière de la gérer.
+- Dette technique : définition et manière de la gérer. (`// TODO`)
 - Nommage du commit
