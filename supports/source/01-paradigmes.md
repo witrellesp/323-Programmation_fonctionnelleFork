@@ -27,10 +27,18 @@ POUR i de 3 à 5 FAIRE
     AFFICHER i
 FIN POUR
 ```
+Ce code va imposer une suite d'opérations à faire par l'ordinateur dans le but de **construire** un résultat.
 
 ### Déclaratif
 
 Le paradigme déclaratif implique de décrire ce que l’on souhaite sans forcément donner tous les détails. On trouve dans cet ensemble notamment le paradigme **Fonctionnel**.
+
+Le pseudo-code pourrait ressembler à:
+```
+suite = suite_de_chiffres (1,5)
+Afficher suite
+```
+Ce code va déclarer ce qu'**est** le résultat et l'afficher en suite
 
 ## Procédural
 C’est ce qui est fait en 1ère année à l’ETML:
@@ -91,7 +99,7 @@ Cet avertissement a pour but d’éviter une polarisation de type *il faut toujo
 
 C’est ce qui es fait en 3ème année à l’ETML ;-)
 
-Comme son nom l’indique, le paradgime fonctionnel fait la grande part aux fenctions.
+Comme son nom l’indique, le paradgime fonctionnel fait la grande part aux fonctions.
 
 ### Tout est fonction, ou presque
 Ainsi, l’exemple précédent pourrait ressembler à ça:
