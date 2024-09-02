@@ -13,9 +13,9 @@ La fonction filter retourne une nouvelle collection qui contient les éléments 
 
 ![Alt text](02b-filter-img1.png)
 
-# Exemples
+## Exemples basiques
 
-### Exemple 1 : Filtrage d'une liste de nombres
+#### Exemple 1 : Filtrage d'une liste de nombres
 
 ```csharp
 List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
@@ -24,7 +24,7 @@ List<int> evenNumbers = numbers.Where(x => x % 2 == 0).ToList();
 
 Dans cet exemple, la fonction filter est utilisée pour récupérer les nombres pairs d'une liste de nombres.
 
-### Exemple 2 : Filtrage d'une liste de personnes
+#### Exemple 2 : Filtrage d'une liste de personnes
 
 ```csharp
 List<Person> people = new List<Person> {
@@ -39,7 +39,7 @@ List<Person> adults = people.Where(p => p.Age >= 18).ToList();
 
 Dans cet exemple, la fonction filter est utilisée pour récupérer les personnes adultes d'une liste de personnes.
 
-### Exemple 3 : Filtrage d'une liste de chaine de caractères
+#### Exemple 3 : Filtrage d'une liste de chaine de caractères
 
 ```csharp
 List<string> words = new List<string> { "hello", "world", "abc", "def", "ghi" };
@@ -48,6 +48,21 @@ List<string> wordsStartingWithA = words.Where(w => w.StartsWith("a")).ToList();
 ```
 
 Dans cet exemple, la fonction filter est utilisée pour récupérer les mots qui commencent par "a" d'une liste de mots.
+
+## Filtrages avancés
+Au cas où cela ne coulerait pas de source avec ce qui a été présenté sur les fonctions d’ordre supérieur, il est intéressant de noter que les filtres peuvent être combinés soit directement avec des opérateurs de LINQ ou alors avec n’importe quelle expression du langage C# avec une fonction dédiée.
+
+### 3 différentes manières de filtrer avec plusieurs critères
+```csharp
+numbers.Where(n => n > 2).Where(n => n % 2 == 0); // 2 where chaînés en lambda
+
+numbers.Where(n => n > 2 && n % 2 == 0); //condition avec && logique en lambda
+
+//version avec une fonction complète
+numbers.Where(n => { 
+    return n>2 && n % 2 == 0;
+});
+```
 
 ## Avantages
 
