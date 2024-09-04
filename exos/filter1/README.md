@@ -16,17 +16,18 @@ string[] words = { "bonjour", "hello", "monde", "vert", "rouge", "bleu", "jaune"
 > Si possible, utiliser des lambdas
 
 ### Partie 2: Epsilon
+
 Trouver une source fiable sur la répartition des lettres en français (A:8.15%, B:0.97%,...) et afficher les mots avec leur valeur Epsilon et **uniquement ceux dont la valeur Epsilon est comprise entre 0.5 et 0.95**. 
 
-*La valeur Epsilon correspond à la somme des probabilités pourcentage=probabilité\*100) d'apparation de chaque lettre d'un mot si les
- lettres sont toute différentes. En cas de lettre présente 2x dans le mots, 
- par exemple, la probabilité est divisée par le nombre de lettres*
+*La valeur Epsilon correspond à la somme des probabilités pourcentage=probabilité\*100) d'apparation de chaque lettre d'un mot si les lettres sont toute différentes. En cas de lettre présente 2x dans le mots, par exemple, la probabilité est divisée par le nombre de lettres*
 
 #### Exemple de calcul pour Epsilon
 
 |Source|Epsilon|
 | :-- | :-------------- |
-| ABA | 0.0815/2 + 0.97 |
+| ABA | 0.0815/2 + 0.0097 |
+
+> Si vous ne savez pas par quel bout prendre ce problème, regardez [ça](steps.md).
 
 ### Partie 3: Dictionnaire
 Filtrer désormais dynamiquement les mots qui s'écrivent de la même manière en français et en anglais avec cette liste source:
