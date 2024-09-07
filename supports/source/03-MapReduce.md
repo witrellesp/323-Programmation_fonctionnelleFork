@@ -7,9 +7,88 @@ Après `Filter` incarné par le `Where` de *Linq* qui permet de filtrer une coll
 ## Transformeur | Map | Select | Projection
 Inspiré du mots clé SQL de la projection ensembliste `SELECT`, LINQ propose l'outil `Select` pour faire des opérations de *mapping* dans une collection...
 
-###TODO
+### Je ne veux pas transformer, je veux juste *sélectionner*
+Le terme `transformer` peut semblé inadapté comparé à celui de `projection`, pourtant en sélectionnant une sous-partie d’un ensemble de départ, il y a une transformation...
+
+> Selon les langages et librairies, il existe une nuance importante entre transformation et projection dans le sens où la transformation s’applique sur la source directement plutôt que de renvoyer une nouvelle structure de données.
+> 
+> Cet aspect touche à `l'immutabilité` qui sera présentée ultérieurement....
+
+### `Select`: Choix d'un attribut dans une classe
+
+```csharp
+class Person{
+    public string Name{get;set;} 
+    public int Age{get;set;}
+    public int Sisters{get;set;}
+    public int Brothers{get;set;}
+  }
+
+List<Person> cid5d = new List<Person>(){
+    new Person(){Name="Paul",Age=15,Sisters=2,Brothers=1},
+    new Person(){Name="Lucie",Age=18,Sisters=1,Brothers=3},
+    new Person(){Name="Claude",Age=16,Sisters=0,Brothers=0}
+};
+
+var names = cid5d.Select(person => person.Name);//{"Paul","Lucie","Claude"}
+```
+
+Comme en SQL, on sélectionne une partie des données (ici juste le nom) pour générer une nouvelle liste contenant ceux-ci.
+
+### `Select`: Modification d'une valeur
+
+```csharp
+List<int> numbers = new(){1,2,3,4,5};
+
+var squares = numbers.Select(number=>number * number); // {1,4,9,16,25}
+```
+
+Cette foi-ci, on génère un nouvel ensemble de valeurs modifiées selon l'ensemble de base...
+
+### Tuple
+Pour récupérer un sous-ensemble d'attributs d'une classe, le tuple peut s'avérer utile:
+
+```csharp
+var adults = 
+    cid5d.Select(person => (person.Name/*Devient Item1*/,person.Age/*Devient Item2*/))
+        .Where(tuple=>tuple.Item2>=18); //Item2 correspond à l'age
+    
+    Console.WriteLine(adults.First().Item1); //Lucie
+```
+
+> Le `Tuple` est une sorte de classe anonyme pouvant supporter n attributs qu'on accède avec les propriétés Item1, Item2, Item3, ItemN un peu comme avec un tableau...
+
+```csharp
+var tuple = (1,2,3);
+Console.WriteLine(tuple.Item1);//1
+Console.WriteLine(tuple.Item2);//2
+Console.WriteLine(tuple.Item3);//3
+```
+
+### Transformateurs communs
+LINQ propose quelques transformateurs utiles:
+
+- `GroupBy`
+- `ToList`
+- `ToDictionary`
+  
+
+#### GroupBy
+Comme son nom l'indique, il groupe selon un critère et renvoie une structure contenant pour chaque élément ses éléments correspondants et leur nombre.
+
+#### ToList
+Convertit l'entrée en liste.
+
+#### ToDictionary
+Créee un dictionnaire selon la fonction d'affectation pour la clé et la valeur.
+
+
+Il est temps d'aborder maintenant les accumulateurs...
 
 ## Accumulateur | Aggrégateur | Reduce
+
+![alt text](pile.jpg)
+
 Cet aspect a déjà été aperçu avec les fonctions `Sum` et `Average` utilisées pour [l'exercice Epsilon](../../exos/filter1/README.md#partie-2-epsilon).
 
 Voici un exemple basique pour calculer une somme et une moyenne:
@@ -60,7 +139,7 @@ int sum = numbers.Aggregate((current,next)=>current+next)
 ```
 
 Chaque élément est comparé à celui d'après et en résulte un seul élément défini par le lambda.
-Ainsi, à la fin de l'opération, *il n'en restera plus qu'un*...
+Ainsi, à la fin de l'opération, *il ne doit en rester qu'un*...
 
 ![Alt text](highlander.png)
 
