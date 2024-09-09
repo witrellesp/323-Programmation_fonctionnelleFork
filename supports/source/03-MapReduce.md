@@ -30,17 +30,16 @@ List<Person> cid5d = new List<Person>(){
     new Person(){Name="Claude",Age=16,Sisters=0,Brothers=0}
 };
 
-var names = cid5d.Select(person => person.Name);//{"Paul","Lucie","Claude"}
+IEnumerable<string> names = cid5d.Select(person => person.Name);//{"Paul","Lucie","Claude"}
 ```
 
 Comme en SQL, on sélectionne une partie des données (ici juste le nom) pour générer une nouvelle liste contenant ceux-ci.
 
 ### `Select`: Modification d'une valeur
 
+Au moment de produire le résultat, on veut parfois le transformer plutôt que de conserver la valeur brute:
 ```csharp
-List<int> numbers = new(){1,2,3,4,5};
-
-var squares = numbers.Select(number=>number * number); // {1,4,9,16,25}
+IEnumerable<int> numberOfSiblings = cid5d.Select(person => person.Sisters+person.Brothers);//{3,4,0}
 ```
 
 Cette foi-ci, on génère un nouvel ensemble de valeurs modifiées selon l'ensemble de base...
@@ -65,7 +64,7 @@ Console.WriteLine(tuple.Item2);//2
 Console.WriteLine(tuple.Item3);//3
 ```
 
-### Transformateurs communs
+### Transformeurs communs
 LINQ propose quelques transformateurs utiles:
 
 - `GroupBy`
@@ -74,14 +73,31 @@ LINQ propose quelques transformateurs utiles:
   
 
 #### GroupBy
-Comme son nom l'indique, il groupe selon un critère et renvoie une structure contenant pour chaque élément ses éléments correspondants et leur nombre.
+Comme son nom l'indique, il groupe selon un critère et renvoie un dictionnaire dont chaque entrée a:
+- Une clé
+- La collection des élément ses éléments qui satisfont le critère (sur laquelle on va pouvoir appliquer des aggrégateurs tels que `Count`, `Sum`, `Max`, `Min`, ....)
+
+Voir l'exemple dans la [documentation .NET](https://learn.microsoft.com/fr-fr/dotnet/api/system.linq.enumerable.groupby?view=net-8.0)
 
 #### ToList
-Convertit l'entrée en liste.
+Convertit l'entrée (de type `IEnumerable`) en liste (de type `List<T>`).
 
 #### ToDictionary
-Créee un dictionnaire selon la fonction d'affectation pour la clé et la valeur.
+Crée un dictionnaire selon la fonction d'affectation pour la clé et la valeur.
 
+Cela peut s'avérer utile dans certaines situations, par exemple pour retrouver plus rapidement une information. En effet, retrouver une personne par index dans un dictionnaire comme ceci:
+
+```csharp
+Dictionary<int, Person> dico;
+Person toto = dico[712]
+```
+est beaucoup plus rapide qu'une recherche LinQ comme cela
+
+```csharp
+List<Person> people;
+Person toto = people.Where(p => p.Id == 712).First();
+```
+Si vous en doutez, essayez [ceci](../../assets/SearchSpeed/)...
 
 Il est temps d'aborder maintenant les accumulateurs...
 
@@ -160,9 +176,9 @@ Pour des types non primitifs, on doit utiliser une signature plus complète avec
 - Choix de la forme du résultat
 
 ```csharp
-var min = cid5d.Aggregate(
+string min = cid5d.Aggregate(
     new Person(){Brothers=99}, //Seed
-    func(a,b)=>a.Brothers<b.Brothers?a:b, //Min logic
+    (a,b)=>a.Brothers<b.Brothers?a:b, //Min logic
     person=>person.Name); //Result transformer
 ```
 
