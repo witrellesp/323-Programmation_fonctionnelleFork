@@ -48,7 +48,7 @@ Dum...t,Nuts,110
 
 0. La quantité de groseilles disponibles sur le marché
 1. Le chiffre d’affaire possible **total** pour chaque marchand (tout produit confondu)
-2. Le plus grand et le plus petit de ces chiffres d’affaire
+2. Le plus grand, le plus petit et la moyenne de ces chiffres d’affaire
 3. Le marchand ayant le plus de noix à vendre
 4. Le marchand ayant le plus d’affinités avec ses produits
 
