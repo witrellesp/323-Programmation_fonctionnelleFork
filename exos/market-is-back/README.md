@@ -20,7 +20,7 @@ List<Product> products = new List<Product>
 ## Map
 
 ### 1. Chiffre d’affaire international anonyme
-En transformant la liste initiale en une liste contenant:
+En [transformant](../../supports/source/03-MapReduce.md#je-ne-veux-pas-transformer-je-veux-juste-sélectionner) la liste initiale en une liste contenant:
 
 - Les 3 premières lettres du producteur suivies de "..." suivis de la dernière lettre du nom (Dumont --> Dum...t) [pseudo-anonymisation]
 - Le nom de l’aliment en anglais [dictionnaire disponible ici](./i18n.cs)
@@ -44,7 +44,7 @@ Dum...t,Nuts,110
 
 ## Reduce
 
-À partir du [résultat précédent](#1-chiffre-daffaire-international-anonyme), déterminer et afficher, à l’aide d’aggrégateurs:
+À partir du [résultat précédent](#1-chiffre-daffaire-international-anonyme), déterminer et afficher, **à l’aide [d’aggrégateurs](../../supports/source/03-MapReduce.md#accumulateur--aggrégateur--reduce)**:
 
 0. La quantité de groseilles disponibles sur le marché
 1. Le chiffre d’affaire possible **total** pour chaque marchand (tout produit confondu)
