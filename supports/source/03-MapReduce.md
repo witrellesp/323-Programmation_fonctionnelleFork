@@ -65,10 +65,11 @@ Console.WriteLine(tuple.Item3);//3
 ```
 
 ### Transformeurs communs
-LINQ propose quelques transformateurs utiles:
+LINQ propose quelques transformeurs utiles:
 
 - `GroupBy`
 - `ToList`
+- `ToArray`
 - `ToDictionary`
   
 
