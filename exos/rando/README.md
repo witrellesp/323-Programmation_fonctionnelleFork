@@ -26,7 +26,7 @@ Si vous ne trouvez pas la lib de vos rêves, vous pouvez toujours vous rabattre 
 
 ## Ecriture
 
-Sauvegardez votre liste dans un fichier en format `.gpx`, le fichier doit être lisible dans SuisseMobile.
+Sauvegardez votre liste dans un fichier en format `.gpx`, le fichier doit être lisible dans [GPX Studio](https://gpx.studio/app#11.66/46.4303/7.6373).
 
 ## Transformation
 
