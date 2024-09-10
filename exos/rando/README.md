@@ -6,7 +6,7 @@ Deux fichiers vous sont fournis, ils ont été générés par le site [SuisseMob
 
 ## Lecture 
 
-Trouvez un moyen de lire un fichier `.gpx` pour le stocker dans une liste d'objets `Trackpoint` dont voici la classe dans son expression la plus simple possible:
+Trouvez un moyen de lire un [fichier `.gpx`](./gpx/) pour le stocker dans une liste d'objets `Trackpoint` dont voici la classe dans son expression la plus simple possible:
 
 ```csharp
     class Trackpoint
@@ -34,7 +34,7 @@ Maintenant que vous tenez les deux bouts, faites des choses utiles entre deux!
 
 Par exemple:
 
-1. Réduire la définition: on ne garde qu'un point sur cinq
+1. Réduire la définition: on ne garde qu'un point sur cinq 
 2. Calculer la longueur du tracé, son dénivelé positif et négatif
 3. Combiner: lire deux fichiers et les fusionner en un seul tracé. Attention à ne pas faire n'importe quoi: on refuse de fusionner deux fichiers si le point d'arrivée d'un fichier est trop loin du point de départ de l'autre ou vice versa.
 4. Réduire intelligeamment: On ne supprime pas un point tout les X points, on regarde la distance entre un point et le suivant et on supprime les points qui sont trop proches du précédent.
@@ -43,4 +43,14 @@ Par exemple:
 
 Faites un nouveau projet, basé sur cette solution, intégrez-y votre code de lecture du fichier `.gpx`.
 
+### 1. Affichage de la trace avec une échelle pertinente
 Codez le bon transformeur pour que la trace GPS devienne une ligne dessinée par [`DrawLines`](https://learn.microsoft.com/en-us/dotnet/api/system.drawing.graphics.drawlines?view=net-8.0)
+
+### 2. Réaliser une animation
+Un peu comme avec [relive](https://relive.cc), la trace s’affiche dynamiquement avec un temps de pause 
+
+- identique pour chaque point
+- proportionnelle au dénivelé entre les 2 points
+
+### 3. Ajouter la carte en fond
+Trouver une image satellite d’un des tracés pour donner une meilleure immersion...
