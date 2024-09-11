@@ -63,6 +63,13 @@ Console.WriteLine(tuple.Item1);//1
 Console.WriteLine(tuple.Item2);//2
 Console.WriteLine(tuple.Item3);//3
 ```
+> Il est possible de nommer les attributs d'un tuple
+```csharp
+var tuple = (first: 1, second: 2,third: 3);
+Console.WriteLine(tuple.first);//1
+Console.WriteLine(tuple.second);//2
+Console.WriteLine(tuple.third);//3
+```
 
 ### Transformeurs communs
 LINQ propose quelques transformeurs utiles:
@@ -177,7 +184,7 @@ Pour des types non primitifs, on doit utiliser une signature plus complète avec
 - Choix de la forme du résultat
 
 ```csharp
-string min = cid5d.Aggregate(
+var min = cid5d.Aggregate(
     new Person(){Brothers=99}, //Seed
     (a,b)=>a.Brothers<b.Brothers?a:b, //Min logic
     person=>person.Name); //Result transformer
