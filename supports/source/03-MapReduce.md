@@ -129,6 +129,11 @@ Si vous en doutez, essayez [ceci](../../assets/SearchSpeed/)...
 
 Il est temps d'aborder maintenant les accumulateurs...
 
+
+### Exemple étranges
+
+![Alt text](oddT.png)
+
 ## Accumulateur | Aggrégateur | Reduce
 
 ![alt text](pile.jpg)
