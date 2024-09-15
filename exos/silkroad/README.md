@@ -25,3 +25,8 @@ Si Sissa avait connu la programmation d'aujourd'hui, il aurait certainement ador
 Le coeur de ce programme - la logique qui répond à la question et détermine le chemin - ne fait pas plus de 10 lignes de code.
 
 Et pour que vous puissiez vous concentrer sur ce coeur, vous pouvez vous aider de [ce squelette](silkroadBase.zip) pour démarrer.
+
+### S'il vous reste du temps
+
+- Augmentez la taille de l'échiquier ( cela devrait pouvoir se faire en ne changeant qu'une constante )
+- Créez des variantes pour d'autre pièces (tour, fou, reine, cavalier)
