@@ -2,8 +2,8 @@
 
 (non, on ne va pas aller sur le darknet)
 
-Vous connaissez probablement la légende de l'échiquier et des grains de riz.
-![](sissa.webp)
+Vous connaissez probablement la légende de l'échiquier et des grains de riz.  
+![](sissa.webp)  
 <details>
 <summary>Cliquez ici si vous l'avez oubliée</summary>
 En Inde, le roi Belkib (ou Bathait), qui s'ennuie à la cour, demande qu'on lui invente un jeu pour le distraire. Le sage Sissa invente alors un jeu d'échecs, ce qui ravit le roi. Pour remercier Sissa, le roi lui demande de choisir sa récompense, aussi fastueuse qu'elle puisse être. Sissa choisit de demander au roi de prendre le plateau du jeu et, sur la première case, poser un grain de riz, ensuite deux sur la deuxième, puis quatre sur la troisième, et ainsi de suite, en doublant à chaque fois le nombre de grains de riz que l’on met. Le roi et la cour sont amusés par la modestie de cette demande. Mais lorsqu'on la met en œuvre, on s'aperçoit qu'il n'y a pas assez de grains de riz dans tout le royaume pour la satisfaire2,3.
