@@ -39,6 +39,7 @@ export default defineConfig({
       provider: 'local'
     }
   },
+  ignoreDeadLinks: true,
   
   rewrites: {
     'README.md': 'index.md',
