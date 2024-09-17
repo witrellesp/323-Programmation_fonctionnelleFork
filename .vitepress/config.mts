@@ -40,7 +40,7 @@ export default defineConfig({
     }
   },
   ignoreDeadLinks: true,
-  base: "/323-Programmation_fonctionnelle/",//for gh pages
+  base: "/{REPO}/",//for gh pages
   
   rewrites: {
     'README.md': 'index.md',
