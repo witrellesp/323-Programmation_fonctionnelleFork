@@ -26,7 +26,7 @@ générer l'affiche HTML
 TODO
 - Requêtes élémentaires - les 2
 - Affiche html template - xcl
-- Trouver source image - jmy
+- Trouver source image - [affiches](./sw-affiches.zip)
 - Finaliser l'énoncé -xcl
 - Réorganiser roadmap - xcl
 - Séquence04-05.md -jmy
