@@ -11,6 +11,18 @@ Combien y a-t-il de films Star Wars ? Etayez votre réponse en fournissant un pr
   - L'année de sortie
 pour tous les films répertoriés sur SWAPI. Sauf "L'empire contre-attaque" parce qu'il est nul.
 
+[ELEMENTARY ZONE JMY]
+Quelle est le vaisseau le plus rapide en vitesse lumière (vmax = vitesse atmosphérique max * ratio hyperespace) ?
+Combien de vaisseaux sont plus rapides que la moyenne de la vitesse atmosphérique de tous les vaisseaux ?
+Quel est le budget nécessaire (en franc suisse (1 crédit = 0.778 CHF)) à l’achat de la flotte totale ?
+Générer un CSV (vaisseau.txt) contenant les infos suivantes des vaisseaux : 
+- Nom du vaisseau
+- Prix
+- Longueur
+- Films dans lesquels ils apparaissent (nom des films en minuscule séparés par des tirets)
+- Nom des planètes survolées (nom des planètes en minuscule séparées par des tirets)
+[/END ELEMENTARY ZONE JMY]
+
 ...(autres requêtes élémentaires)...
 
 programme console: lire une string, trouver le titre sw le plus proche (distance de Levenshtein), écrire "l'affiche": 
