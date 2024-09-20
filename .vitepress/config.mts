@@ -30,7 +30,7 @@ export default defineConfig({
       {
         text: 'Exos',
         collapsed : true,
-        items: glob.sync('exos/*/README.md',{posix:true})
+        items: glob.sync(['exos/*/README.md','exos/*/enoncé.md'],{posix:true})
           .map(f => '/' + f)
           .map((file) => ({ text: `${file.split("/")[2]}`, link: `${file.replace("README","index")}` })).reverse()
       }
