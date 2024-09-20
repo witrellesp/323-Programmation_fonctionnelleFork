@@ -24,22 +24,9 @@ export default defineConfig({
         collapsed : true,
         items: glob.sync('supports/**/*.md')
           .map(f => '/' + f)
-          .map((file) => ({ text: `${path.basename(file)}`, link: `${file}` })).reverse()
+          .map((file) => ({ text: `${path.basename(file)}`, link: `/${file}` })).reverse()
       }
-      ,
-      //todo : dynamic
-      {
-        text: 'Exos',
-        collapsed : true,
-        items: 
-        [
-          { text: "marché", link: "/exos/marché/enoncé" },
-          { text: "filter1", link: "/exos/filter1/" },
-          { text: "market-is-back", link: "/exos/market-is-back/" },
-          { text: "rando", link: "/exos/rando/" },
-          { text: "silkroad", link: "/exos/silkroad/" },
-        ]
-      }
+      
     ],
 
     socialLinks: [
