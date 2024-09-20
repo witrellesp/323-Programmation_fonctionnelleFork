@@ -22,9 +22,17 @@ export default defineConfig({
       {
         text: 'Supports',
         collapsed : true,
-        items: glob.sync('supports/**/*.md')
+        items: glob.sync('supports/**/*.md',{posix:true})
           .map(f => '/' + f)
-          .map((file) => ({ text: `${path.basename(file)}`, link: `/${file}` })).reverse()
+          .map((file) => ({ text: `${path.basename(file).replace(".md","")}`, link: `${file}` })).reverse()
+      }
+      ,
+      {
+        text: 'Exos',
+        collapsed : true,
+        items: glob.sync('exos/*/README.md',{posix:true})
+          .map(f => '/' + f)
+          .map((file) => ({ text: `${file.split("/")[2]}`, link: `${file}` })).reverse()
       }
       
     ],
