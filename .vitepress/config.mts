@@ -45,15 +45,10 @@ export default defineConfig({
     }
   },
   ignoreDeadLinks: true,
-  base: "/{REPO}/",//for gh pages
+  base: "/323-Programmation_fonctionnelle/",//for gh pages
   
   rewrites: {
     'README.md': 'index.md',
     '(.*)/README.md': '(.*)/index.md',
   },
-  //disable next/previous
-  transformPageData(pageData) {
-    //pageData.frontmatter.next ??= false;
-    pageData.frontmatter.previous ??= false;
-  }
 })
