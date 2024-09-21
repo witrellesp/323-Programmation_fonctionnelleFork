@@ -46,6 +46,9 @@ jobs:
         run: pnpm install 
       - name: Build with VitePress
         run: pnpm docs:build 
+      - name: Generate pdfs
+        run: pnpm pdf:lin
+        continue-on-error: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

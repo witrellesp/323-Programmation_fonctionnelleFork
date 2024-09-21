@@ -3,8 +3,8 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
-    "pdf:lin": "for f in supports/source/*.md; do mdpdf --footer=.vitepress/pdf-footer.html \"${f}\" \"supports/$(basename \"${f}\" .md).pdf\"; done",
-    "pdf:win": "for /r %F in (supports\\source\\*.md) do mdpdf --footer=.vitepress/pdf-footer.html \"%F\" \"supports/%~nF.pdf\""
+    "pdf:lin": "for f in supports/source/*.md; do mdpdf --footer=.vitepress/pdf-footer.html \"${f}\" \".vitepress/dist/supports/$(basename \"${f}\" .md).pdf\"; done",
+    "pdf:win": "for /r %F in (supports\\source\\*.md) do mdpdf --footer=.vitepress/pdf-footer.html \"%F\" \".vitepress/dist/supports/%~nF.pdf\""
   },
   "devDependencies": {
     "glob": "^11.0.0",
