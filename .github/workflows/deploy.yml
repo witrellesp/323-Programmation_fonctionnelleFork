@@ -46,8 +46,8 @@ jobs:
         run: pnpm install 
       - name: Build with VitePress
         run: pnpm docs:build 
-      - name: install chrome ext
-        run: node node_modules/puppeteer/install.js
+      #- name: install chrome ext
+      #  run: node node_modules/puppeteer/install.js
       - name: Generate pdfs
         run: pnpm pdf:lin
         continue-on-error: true
