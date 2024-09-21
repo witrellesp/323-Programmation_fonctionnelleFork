@@ -46,6 +46,8 @@ jobs:
         run: pnpm install 
       - name: Build with VitePress
         run: pnpm docs:build 
+      - name: install chrome ext
+        run: pnpm dlx puppeteer browsers install chrome
       - name: Generate pdfs
         run: pnpm pdf:lin
         continue-on-error: true
