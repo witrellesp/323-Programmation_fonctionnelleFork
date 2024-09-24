@@ -5,6 +5,8 @@ En voilà encore un peu, rien que pour vos yeux ;-)
 
 ## Rappel
 
+[exo original](../rando/)
+
 1. Un fichier GPX
 2. Une distance à calculer
 3. Quelques étapes intermédiaires
