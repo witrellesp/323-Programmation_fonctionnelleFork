@@ -46,6 +46,8 @@ jobs:
         run: pnpm install 
       - name: Build with VitePress
         run: pnpm docs:build 
+      - name: configure repo URL
+        run: sed -i -e 's,{REPO_URL},${{ github.server_url }}/${{ github.repository }},g' .vitepress/config.mts
       #- name: install chrome ext
       #  run: node node_modules/puppeteer/install.js
       - name: Generate pdfs

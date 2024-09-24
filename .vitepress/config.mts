@@ -38,7 +38,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/ETML-INF/{REPO}' }
+      { icon: 'github', link: '{REPO_URL}' }
     ],
     search: {
       provider: 'local'
