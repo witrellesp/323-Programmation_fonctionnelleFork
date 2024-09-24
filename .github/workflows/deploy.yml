@@ -43,14 +43,26 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
-        run: pnpm install 
+        run: pnpm install
+      - name: check chrome for puppeteer
+        run: | 
+          pnpm exec puppeteer browsers install chrome@127.0.6533.88
+          pnpm exec puppeteer browsers install chrome
+          pnpm exec puppeteer browsers install chrome-headless-shell@127.0.6533.88
+          pnpm exec puppeteer browsers install chrome-headless-shell
+      
+      - name: configure repo URL
+        run: sed -i -e 's,{REPO_URL},${{ github.server_url }}/${{ github.repository }},g' .vitepress/config.mts
       - name: Build with VitePress
         run: pnpm docs:build 
+
       #- name: install chrome ext
       #  run: node node_modules/puppeteer/install.js
+      
       - name: Generate pdfs
         run: pnpm pdf:lin
         continue-on-error: true
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
