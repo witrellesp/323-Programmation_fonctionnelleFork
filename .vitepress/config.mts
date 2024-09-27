@@ -30,30 +30,25 @@ export default defineConfig({
       {
         text: 'Exos',
         collapsed : true,
-        items: glob.sync('exos/*/README.md',{posix:true})
+        items: glob.sync(['exos/*/README.md','exos/*/enoncé.md'],{posix:true})
           .map(f => '/' + f)
-          .map((file) => ({ text: `${file.split("/")[2]}`, link: `${file}` })).reverse()
+          .map((file) => ({ text: `${file.split("/")[2]}`, link: `${file.replace("README","index")}` })).reverse()
       }
       
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/ETML-INF/{REPO}' }
+      { icon: 'github', link: '{REPO_URL}' }
     ],
     search: {
       provider: 'local'
     }
   },
   ignoreDeadLinks: true,
-  base: "/{REPO}/",//for gh pages
+  base: "/323-Programmation_fonctionnelle/",//for gh pages
   
   rewrites: {
     'README.md': 'index.md',
-    '(.*)/README.md': '(.*)/index.md'
+    '(.*)/README.md': '(.*)/index.md',
   },
-  //disable next/previous
-  transformPageData(pageData) {
-    //pageData.frontmatter.next ??= false;
-    pageData.frontmatter.previous ??= false;
-  }
 })
