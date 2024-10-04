@@ -21,7 +21,6 @@ manière répétée selon une règle simple :
    segments) :
    ![koch-fract1.gif](koch-fract1.gif)
 4. Répétez ce processus pour chaque segment de droite nouvellement formé.
-5.
 
 ## Étapes de réalisation
 
@@ -36,6 +35,37 @@ manière répétée selon une règle simple :
     - Dans la fenêtre de conception (`Form Designer`), ajoutez un `Panel` à votre formulaire principal (`Form1`).
       Nommez-le `drawingPanel`.
     - Vous utiliserez ce `Panel` pour dessiner le flocon de Koch.
+```csharp
+namespace KochFractaleFun
+{
+    public partial class FormBase : Form
+    {
+        Panel drawingPanel;
+
+        public FormBase()
+        {
+            InitializeComponent();
+
+            drawingPanel = new Panel();
+            drawingPanel.Location = new Point(90, 59);
+            drawingPanel.Name = "drawingPanel";
+            drawingPanel.Size = new Size(800, 600);
+            drawingPanel.TabIndex = 0;
+            drawingPanel.Paint += DrawingPanel_Paint;
+
+            this.Controls.Add(drawingPanel);
+        }
+
+        private void DrawingPanel_Paint(object sender, PaintEventArgs e)
+        {
+            using (Pen pen = new Pen(Color.Blue, 1))
+            {
+                e.Graphics.DrawLine(pen, new Point(50,50), new Point(75,65));
+            }
+        }
+     }
+}
+```
 
 3. **Créer une fonction récursive pour générer le flocon de Koch selon les informations ci-après**
 
