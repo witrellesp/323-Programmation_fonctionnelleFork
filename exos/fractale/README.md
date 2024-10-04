@@ -136,6 +136,8 @@ Le milieu du segment entre `p1` et `p2` est donné par :
 
 #### Étape 3 : Calculer la hauteur du triangle équilatéral
 
+![pyth.png](pyth.png)
+
 La hauteur `h` d'un triangle équilatéral de côté `d` est donnée par :
 
 - `h = (sqrt(3) / 2) * d`
