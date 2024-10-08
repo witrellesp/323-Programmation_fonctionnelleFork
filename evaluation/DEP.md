@@ -5,6 +5,8 @@ L'évaluation est basée sur 2 Eléments:
 |Checks théoriques | Le(s) concept(s) vu(s) la semaine précédente | 15 min | Aucun | 50%|2,3,4,5,6 et 8|
 |Test pratique | <ul><li>Implémentation d'un utilitaire "ligne de commande"</li><li>Implémentation de code sur la base d'un test fourni</li><li>Ecriture de test pour une fonction fournie</li><li>Ecriture de code et de test assorti sur la base de besoins utilisateur</li></ul> | 4p.| Tout ce que vous voulez sauf une autre personne ou une intelligence artificielle | 50%|7|
 
+<small>_La pondération est appliquée aux notes arrondies au dixième._</small>
+
 Durant le test pratique:
 - L'accès internet est autorisé
 - La console Impero est active et utilisée. De plus:
