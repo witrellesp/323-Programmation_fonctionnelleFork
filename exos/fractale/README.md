@@ -372,3 +372,25 @@ telle que lorsqu'on fait
 on obtient:
 
 ![](f3.step1.png)
+
+### Etape 2: Dessiner n'importe où
+
+On veut maintenant pouvoir placer notre ligne n'importe où dans le panel.  
+On va donc la déplacer (translate)
+
+Ecrivez une méthode privée 
+
+```csharp
+        private Point[] MoveTo(Point[] points, Point basePoint)
+```
+
+telle que quand on fait :
+
+```csharp
+        graphics.DrawLines(pen, VerticalFlip(MoveTo(pattern, new Point (200,340))));
+        graphics.DrawLines(pen, VerticalFlip(MoveTo(pattern, new Point (20,110))));
+```
+
+on obtient:
+
+![](f3.step2.png)
