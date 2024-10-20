@@ -394,3 +394,24 @@ telle que quand on fait :
 on obtient:
 
 ![](f3.step2.png)
+
+### Etape 3: Redimensionner
+
+On veut pouvoir changer la taille de notre pattern.
+
+Ecrivez une méthode privée 
+
+```csharp
+        private Point[] Resize(Point[] points, double factor)
+```
+
+telle que quand on fait :
+
+```csharp
+graphics.DrawLines(pen, VerticalFlip(MoveTo(Resize(pattern,0.3), new Point (200,340))));
+graphics.DrawLines(pen, VerticalFlip(MoveTo(Resize(pattern,1.5), new Point (20,110))));
+```
+
+on obtient:
+
+![](f3.step3.png)
