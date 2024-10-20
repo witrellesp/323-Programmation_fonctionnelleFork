@@ -1,3 +1,5 @@
+using System.Numerics;
+
 namespace fractales3
 {
     public partial class Fractales : Form
@@ -30,8 +32,10 @@ namespace fractales3
 
         private void drawingPanel_Paint(object sender, PaintEventArgs e)
         {
-            graphics.DrawLines(pen, VerticalFlip(MoveTo(Resize(pattern,0.3), new Point (200,340))));
-            graphics.DrawLines(pen, VerticalFlip(MoveTo(Resize(pattern,1.5), new Point (20,110))));
+            for (int angle = 0; angle < 360; angle+=20)
+            {
+                graphics.DrawLines(pen, VerticalFlip(MoveTo(Resize(Rotate(pattern,angle),0.3), new Point (200,340))));
+            }
         }
 
         private Point[] VerticalFlip(Point[] points)
@@ -47,6 +51,18 @@ namespace fractales3
         private Point[] Resize(Point[] points, double factor)
         {
             return points.Select(p => new Point((int)Math.Round(p.X*factor), (int)Math.Round(p.Y*factor))).ToArray();
+        }
+
+        private Point[] Rotate(Point[] points, int angle)
+        {
+            double angleRadians = angle * (Math.PI / 180.0);
+            return points.Select(p =>
+            {
+                double xNew = p.X * Math.Cos(angleRadians) - p.Y * Math.Sin(angleRadians);
+                double yNew = p.X * Math.Sin(angleRadians) + p.Y * Math.Cos(angleRadians);
+
+                return new Point((int)Math.Round(xNew), (int)Math.Round(yNew));
+            }).ToArray();
         }
 
     }

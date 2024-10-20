@@ -373,6 +373,8 @@ on obtient:
 
 ![](f3.step1.png)
 
+C'est cette ligne brisée - notre pattern - que vous allons fractaliser en remplaçant récursivement chacun des segments par notre pattern!
+
 ### Etape 2: Dessiner n'importe où
 
 On veut maintenant pouvoir placer notre ligne n'importe où dans le panel.  
@@ -415,3 +417,29 @@ graphics.DrawLines(pen, VerticalFlip(MoveTo(Resize(pattern,1.5), new Point (20,1
 on obtient:
 
 ![](f3.step3.png)
+
+
+### Etape 4: Orienter
+
+On veut pouvoir changer l'orientation de notre pattern en faisant tourner chaque point d'un certain angle 
+
+Ecrivez une méthode privée 
+
+```csharp
+        private Point[] Rotate(Point[] points, int angle)
+```
+
+telle que quand on fait :
+
+```csharp
+for (int angle = 0; angle < 360; angle+=20)
+{
+    graphics.DrawLines(pen, 
+        VerticalFlip(MoveTo(Resize(Rotate(pattern,angle),0.3), new Point (200,340)))
+    );
+}
+```
+
+on obtient:
+
+![](f3.step4.png)
