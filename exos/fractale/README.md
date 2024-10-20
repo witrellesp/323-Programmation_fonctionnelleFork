@@ -356,3 +356,19 @@ Utilisez le code qui sui pour obtenir le résultat ci-dessous:
 ```
 ![](f3.base.png)
 
+### Etape 1: Coordonnées naturelles
+
+Il est beaucoup plus naturel d'avoir un système de coordonnées dont l'origine est en bas de l'écran.
+
+Ecrivez une méthode privée 
+
+```csharp
+        private Point[] VerticalFlip(Point[] points)
+```
+telle que lorsqu'on fait
+```csharp
+        graphics.DrawLines(pen, VerticalFlip(pattern));
+```
+on obtient:
+
+![](f3.step1.png)

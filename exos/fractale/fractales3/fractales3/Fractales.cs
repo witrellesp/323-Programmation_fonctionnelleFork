@@ -30,7 +30,12 @@ namespace fractales3
 
         private void drawingPanel_Paint(object sender, PaintEventArgs e)
         {
-            graphics.DrawLines(pen, pattern);
+            graphics.DrawLines(pen, VerticalFlip(pattern));
+        }
+
+        private Point[] VerticalFlip(Point[] points)
+        {
+            return points.Select(p => new Point(p.X, PANEL_HEIGHT-p.Y)).ToArray();
         }
 
     }
