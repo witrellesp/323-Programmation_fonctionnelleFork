@@ -506,3 +506,72 @@ public void Test_angle_and_length()
 
 ```
 
+### Etape 6: Substituer le pattern à un segment
+
+Avec le calcul des angles, de la longueur et les méthode de rotation et redimensionnement, nous sommes armés pour l'étape suivante: positionner le segment représentatif du pattern sur n'importe quel segment.
+
+![](f3.step6.1%20objectif.png)
+
+Cela se fait en trois étapes:
+
+1. Rotation   
+   ![](f3.step6.2%20rotation.png)  
+   On sait faire, mais attention à bien calculer l'angle!
+2. Redimensionnement  
+   ![](f3.step6.3%20dimensions.png)  
+   On sait faire aussi !
+3. Positionnement  
+   ![](f3.step6.4%20translation.png)  
+
+En code, cela se traduit par le code suivant (à compléter)
+
+```csharp
+private Point[] FitPattern(Point[] pattern, Point start, Point end)
+{
+    // Compute the size ratio
+
+    // Compute the angle
+
+    // Do the job
+    return MoveTo(Resize(Rotate(pattern, angle), ratio), start);
+}
+```
+
+Utilisé ainsi:
+
+```csharp
+graphics.DrawLines(pen, VerticalFlip(FitPattern(pattern, new Point(40, 40), new Point(400, 40))));
+graphics.DrawLines(pen, VerticalFlip(FitPattern(pattern, new Point(400, 400), new Point(300, 300))));
+graphics.DrawLines(pen, VerticalFlip(FitPattern(pattern, new Point(20, 400), new Point(250, 300))));
+```
+
+cela donne:
+
+![](f3.step6.5%20result.png)
+
+### Etape 7: "Y'a plus qu'à..."
+
+Et voilà, on arrive au moment crucial avec tous les outils en mains.
+
+La "fractalisation" d'une liste de points avec notre pattern se résume à :
+
+1. Si le niveau de fractalisation (`depth`) est de 0 on stoppe la récursion en retournant la liste de points fournie sans modification
+2. Sinon, on retoure la liste des points constituée par tous les segments de la ligne donnée dans laquelle on a substitué chaque segment par le pattern
+
+Avec une profondeur de 9:
+
+```csharp
+graphics.DrawLines(pen, 
+    VerticalFlip(MoveTo(
+      Fractalize(pattern, 9),
+    new Point(PANEL_WIDTH/3,PANEL_HEIGHT/3))));
+```
+
+on obtient:
+
+![](f3.step7.png)
+
+ou en appliquant le même pattern avec une profondeur de 7 à la liste des points utilisés dans les tests unitaires:
+
+![](f3.step7b.png)
+
