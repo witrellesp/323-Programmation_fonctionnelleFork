@@ -46,7 +46,7 @@ namespace fractales3
 
         private void drawingPanel_Paint(object sender, PaintEventArgs e)
         {
-            graphics.DrawLines(pen, VerticalFlip(MoveTo(Fractalize(points, 5),new Point(PANEL_WIDTH/2,PANEL_HEIGHT/2))));
+            graphics.DrawLines(pen, VerticalFlip(MoveTo(Fractalize(points, (int)nudDepth.Value), new Point(PANEL_WIDTH / 2, PANEL_HEIGHT / 2))));
         }
 
         private Point[] VerticalFlip(Point[] points)
@@ -97,7 +97,7 @@ namespace fractales3
             // Compute the angle
             int patternAngle = Angle(pattern[0], pattern[pattern.Length - 1]);
             int segmentAngle = Angle(start, end);
-            int angle =  patternAngle - segmentAngle;
+            int angle = patternAngle - segmentAngle;
 
             // Do the job
             return MoveTo(Resize(Rotate(pattern, angle), ratio), start);
@@ -106,7 +106,12 @@ namespace fractales3
         private Point[] Fractalize(Point[] ptrn, int depth)
         {
             if (depth == 0) return ptrn;
-            return ptrn.Zip(ptrn.Skip(1), (p1, p2) => Fractalize(FitPattern(pattern, p1, p2),depth-1)).SelectMany(p => p).ToArray();
+            return ptrn.Zip(ptrn.Skip(1), (p1, p2) => Fractalize(FitPattern(pattern, p1, p2), depth - 1)).SelectMany(p => p).ToArray();
+        }
+
+        private void nudDepth_ValueChanged(object sender, EventArgs e)
+        {
+            drawingPanel.Invalidate();
         }
     }
 }
