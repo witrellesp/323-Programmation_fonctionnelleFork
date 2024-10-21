@@ -31,6 +31,8 @@
             drawingPanel = new Panel();
             nudDepth = new NumericUpDown();
             label1 = new Label();
+            rbtLine = new RadioButton();
+            rbtCurve = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)nudDepth).BeginInit();
             SuspendLayout();
             // 
@@ -60,11 +62,37 @@
             label1.TabIndex = 4;
             label1.Text = "Depth";
             // 
+            // rbtLine
+            // 
+            rbtLine.AutoSize = true;
+            rbtLine.Checked = true;
+            rbtLine.Location = new Point(580, 25);
+            rbtLine.Name = "rbtLine";
+            rbtLine.Size = new Size(47, 19);
+            rbtLine.TabIndex = 5;
+            rbtLine.TabStop = true;
+            rbtLine.Text = "Line";
+            rbtLine.UseVisualStyleBackColor = true;
+            rbtLine.CheckedChanged += rbtLine_CheckedChanged;
+            // 
+            // rbtCurve
+            // 
+            rbtCurve.AutoSize = true;
+            rbtCurve.Location = new Point(580, 50);
+            rbtCurve.Name = "rbtCurve";
+            rbtCurve.Size = new Size(56, 19);
+            rbtCurve.TabIndex = 6;
+            rbtCurve.Text = "Curve";
+            rbtCurve.UseVisualStyleBackColor = true;
+            rbtCurve.CheckedChanged += rbtCurve_CheckedChanged;
+            // 
             // Fractales
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(860, 634);
+            Controls.Add(rbtCurve);
+            Controls.Add(rbtLine);
             Controls.Add(label1);
             Controls.Add(nudDepth);
             Controls.Add(drawingPanel);
@@ -80,5 +108,7 @@
         private Panel drawingPanel;
         private NumericUpDown nudDepth;
         private Label label1;
+        private RadioButton rbtLine;
+        private RadioButton rbtCurve;
     }
 }

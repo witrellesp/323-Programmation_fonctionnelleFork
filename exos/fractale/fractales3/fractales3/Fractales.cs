@@ -11,6 +11,8 @@ namespace fractales3
 
         Graphics graphics;
 
+        Action<Pen, Point[]> Draw;
+
         // The first point of a pattern must always be (0,0)
         Point[] pattern = new Point[5] {
             new Point(0, 0),
@@ -38,6 +40,7 @@ namespace fractales3
         {
             InitializeComponent();
             graphics = drawingPanel.CreateGraphics();
+            Draw = graphics.DrawLines;
 
             // Initialize pannel dimensions
             PANEL_WIDTH = drawingPanel.ClientSize.Width;
@@ -46,7 +49,7 @@ namespace fractales3
 
         private void drawingPanel_Paint(object sender, PaintEventArgs e)
         {
-            graphics.DrawLines(pen, VerticalFlip(MoveTo(Fractalize(points, (int)nudDepth.Value), new Point(PANEL_WIDTH / 2, PANEL_HEIGHT / 2))));
+            Draw(pen, VerticalFlip(MoveTo(Fractalize(points, (int)nudDepth.Value), new Point(PANEL_WIDTH / 2, PANEL_HEIGHT / 2))));
         }
 
         private Point[] VerticalFlip(Point[] points)
@@ -111,6 +114,18 @@ namespace fractales3
 
         private void nudDepth_ValueChanged(object sender, EventArgs e)
         {
+            drawingPanel.Invalidate();
+        }
+
+        private void rbtLine_CheckedChanged(object sender, EventArgs e)
+        {
+            Draw = graphics.DrawLines;
+            drawingPanel.Invalidate();
+        }
+
+        private void rbtCurve_CheckedChanged(object sender, EventArgs e)
+        {
+            Draw = graphics.DrawCurve;
             drawingPanel.Invalidate();
         }
     }
