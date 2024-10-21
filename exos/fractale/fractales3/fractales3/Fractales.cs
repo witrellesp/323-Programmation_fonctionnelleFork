@@ -12,23 +12,23 @@ namespace fractales3
         Graphics graphics;
 
         // The first point of a pattern must always be (0,0)
-        Point[] pattern = new Point[4] {
+        Point[] pattern = new Point[5] {
             new Point(0, 0),
-            new Point(10, 100),
-            new Point(100, 10),
-            new Point(200, 50)
+            new Point(20, 0),
+            new Point(30, 25),
+            new Point(40, 0),
+            new Point(60,0)
         };
 
-        Point[] points = new Point[9] {
-                new Point(0, 0),
-                new Point(10, 100),
-                new Point(100, 10),
-                new Point(100,-10),
-                new Point(10, -100),
-                new Point(-10, -100),
-                new Point(-100, -10),
-                new Point(-100, 10),
-                new Point(-10, 100)
+        // Test points
+        Point[] points = new Point[7] {
+                new Point(0, 150),
+                new Point(100, 100),
+                new Point(100, -100),
+                new Point(0, -150),
+                new Point(-100, -100),
+                new Point(-100,100),
+                new Point(0, 150)
             };
 
         Pen pen = new Pen(Color.Red, 1);
@@ -46,7 +46,7 @@ namespace fractales3
 
         private void drawingPanel_Paint(object sender, PaintEventArgs e)
         {
-            graphics.DrawLines(pen, VerticalFlip(MoveTo(Fractalize(points, 7),new Point(PANEL_WIDTH/3,PANEL_HEIGHT/3))));
+            graphics.DrawLines(pen, VerticalFlip(MoveTo(Fractalize(points, 5),new Point(PANEL_WIDTH/2,PANEL_HEIGHT/2))));
         }
 
         private Point[] VerticalFlip(Point[] points)
