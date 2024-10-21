@@ -183,14 +183,14 @@ La **covariance** mesure la manière dont deux ensembles de données varient ens
 covariance entre deux séries de valeurs $X$ et $Y$ :
 
 $$
-$ext{Cov}(X, Y) = \frac{\sum{(x_i - \overline{X})(y_i - \overline{Y})}}{n - 1}
+\text{Cov}(X, Y) = \frac{\sum{(x_i - \overline{X})(y_i - \overline{Y})}}{n - 1}
 $$
 
 Où :
 
-- $ x_i $ et $ y_i $ sont les valeurs individuelles des séries $X$ et $Y$,
-- $ \overline{X} $ et $ \overline{Y} $ sont les moyennes des séries $X$ et $Y$,
-- $ n $ est le nombre d'éléments dans les séries.
+- $x_i$ et $y_i$ sont les valeurs individuelles des séries $X$ et $Y$,
+- $\overline{X}$ et $\overline{Y}$ sont les moyennes des séries $X$ et $Y$,
+- $n$ est le nombre d'éléments dans les séries.
 
 >[Si les équations ne s'affichent pas, utiliser ce PDF](README.pdf)
 
