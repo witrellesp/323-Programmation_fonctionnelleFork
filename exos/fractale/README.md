@@ -443,3 +443,66 @@ for (int angle = 0; angle < 360; angle+=20)
 on obtient:
 
 ![](f3.step4.png)
+
+### Etape 5: Le segment représentatif
+
+Lorsqu'on voudra "fractaliser" notre pattern, on devra remplacer chacun de se segments par le pattern lui-même. On se pose alors la question "comment faire correspondre une ligne brisée avec un segment ? La réponse est : grâce au segment représentatif.
+
+Pour faire simple, on va prendre comme segment représentatif de notre pattern le segment qui relie son premier et son dernier point.
+
+![](f3.Segment%20représentatif.png)
+
+On voit que ce dernier est également caractérisé par sa longueur et l'angle qu'il forme avec la verticale.
+
+Nous allons avoir besoin de calculer ces deux valeurs.
+
+Ecrivez deux méthodes
+
+```csharp
+    // Returns the angle in degrees of vector p1-p2 with a vertical line
+    public int Angle(Point p1, Point p2);
+    public double Length(Point p1, Point p2);
+```
+
+Vérifiez-les grâce au test unitaire suivant:
+
+```csharp
+[TestMethod]
+public void Test_angle_and_length()
+{
+    // Arrange
+    Point[] points = new Point[9] {
+        new Point(0, 0),
+        new Point(10, 100),
+        new Point(100, 10),
+        new Point(100,-10),
+        new Point(10, -100),
+        new Point(-10, -100),
+        new Point(-100, -10),
+        new Point(-100, 10),
+        new Point(-10, 100)
+    };
+    Fractales fractales = new Fractales();
+
+    // Act & Assert
+    Assert.AreEqual(6,fractales.Angle(points[0], points[1]));
+    Assert.AreEqual(84,fractales.Angle(points[0], points[2]));
+    Assert.AreEqual(96,fractales.Angle(points[0], points[3]));
+    Assert.AreEqual(174,fractales.Angle(points[0], points[4]));
+    Assert.AreEqual(-174,fractales.Angle(points[0], points[5]));
+    Assert.AreEqual(-96,fractales.Angle(points[0], points[6]));
+    Assert.AreEqual(-84,fractales.Angle(points[0], points[7]));
+    Assert.AreEqual(-6,fractales.Angle(points[0], points[8]));
+
+    Assert.AreEqual(100.5, Math.Round(fractales.Length(points[0], points[1]),2));
+    Assert.AreEqual(100.5, Math.Round(fractales.Length(points[0], points[2]),2));
+    Assert.AreEqual(100.5, Math.Round(fractales.Length(points[0], points[3]),2));
+    Assert.AreEqual(100.5, Math.Round(fractales.Length(points[0], points[4]),2));
+    Assert.AreEqual(100.5, Math.Round(fractales.Length(points[0], points[5]),2));
+    Assert.AreEqual(100.5, Math.Round(fractales.Length(points[0], points[6]),2));
+    Assert.AreEqual(100.5, Math.Round(fractales.Length(points[0], points[7]),2));
+    Assert.AreEqual(100.5, Math.Round(fractales.Length(points[0], points[8]),2));
+}
+
+```
+
