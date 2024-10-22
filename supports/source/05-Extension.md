@@ -14,11 +14,11 @@ un élément du type qu'on veut étendre et préfixé par le mot clé `this`. Et
 `public et statique`:
 
 ```csharp
-public static class Extensions
+public static class PeopleExtensions
 {
-    public static string Greetings(this string subject)
+    public static string Greetings(this string name)
     {
-        return $"Hello {subject}";
+        return $"Hello {name}";
     }
 }
 ```
@@ -34,13 +34,17 @@ Ce code affichera
 Hello Bob
 ```
 
+Pour que vos méthodes d'extension soient utilisables, il faut que la classe qui les définit se trouve
+- Soit dans le même namespace que votre code
+- Soit dans un namespace importé avec `using`
+  
 ### Un peu mieux
 En ajoutant une méthode d'extension qui ne retourne rien (`void`), on peut faire encore mieux.
 
 Méthode supplémentaire : 
 
 ```csharp
-public static void Print(this string subject)
+public static void ToConsole(this string subject)
 {
     Console.WriteLine(subject);
 }
@@ -49,7 +53,7 @@ public static void Print(this string subject)
 Utilisation :
 
 ```csharp
-"Bob".Greetings().Print();
+"Bob".Greetings().ToConsole();
 ```
 
 > Cet exemple montre clairement que le chaînage fonctionnel part des données (ici "Bob"). Ainsi
