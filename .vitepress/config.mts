@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import {glob} from 'glob'
 import path from 'path'
 
+process.env.VITE_EXTRA_EXTENSIONS = 'docx,pdf'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "ICT-323 Fun",
@@ -10,7 +11,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Séquences', link: '/sequences' }
+      { text: 'Séquences', link: '/sequences/01.md' }
     ],
 
     sidebar: [
@@ -49,6 +50,5 @@ export default defineConfig({
   
   rewrites: {
     'README.md': 'index.md',
-    '(.*)/README.md': '(.*)/index.md',
   },
 })
